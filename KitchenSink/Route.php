@@ -84,6 +84,7 @@ class Route
 
                 if ($event instanceof MessageEvent) {
                     if ($event instanceof TextMessage) {
+                        error_log('test ok');
                         $handler = new TextMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof StickerMessage) {
                         $handler = new StickerMessageHandler($bot, $logger, $event);
