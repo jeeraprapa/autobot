@@ -62,9 +62,8 @@ class Route
             $bot = $this->bot;
             /** @var \Monolog\Logger $logger */
             $logger = $this->logger;
-            $replyText = $event->getText();
-                $logger->info('Reply text: ' . $replyText);
-                $resp = $bot->replyText($event->getReplyToken(), $replyText);
+                $logger->info('Reply text');
+                $resp = $bot->replyText($event->getReplyToken(), "Hello World");
             $res->write('OK');
             return $res;
         });
