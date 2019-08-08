@@ -58,14 +58,7 @@ class Route
     public function register(\Slim\App $app)
     {
         $app->post('/callback', function (\Slim\Http\Request $req, \Slim\Http\Response $res) {
-           /** @var \LINE\LINEBot $bot */
-            $bot = $this->bot;
-            /** @var \Monolog\Logger $logger */
-            $logger = $this->logger;
-                $logger->info('Reply text');
-                $resp = $bot->replyText($event->getReplyToken(), "Hello World");
-            $res->write('OK');
-            return $res;
+           return $res->withStatus(400, 'Invalid signature');
         });
     }
 }
