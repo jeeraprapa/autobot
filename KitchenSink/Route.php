@@ -63,6 +63,7 @@ class Route
             /** @var \Monolog\Logger $logger */
             $logger = $this->logger;
             $logger->info('Test message event has come');
+            error_log("Failed to connect to database!", 0);
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
             if (empty($signature)) {
                 return $res->withStatus(400, 'Bad Request');
