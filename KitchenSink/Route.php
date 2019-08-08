@@ -62,7 +62,7 @@ class Route
             $bot = $this->bot;
             /** @var \Monolog\Logger $logger */
             $logger = $this->logger;
-
+            $logger->info('Start Applicantion');
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
             if (empty($signature)) {
                 $logger->info('Signature is missing');
@@ -84,7 +84,6 @@ class Route
 
                 if ($event instanceof MessageEvent) {
                     if ($event instanceof TextMessage) {
-                        error_log('test ok');
                         $handler = new TextMessageHandler($bot, $logger, $req, $event);
                     } elseif ($event instanceof StickerMessage) {
                         $handler = new StickerMessageHandler($bot, $logger, $event);
