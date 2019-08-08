@@ -64,6 +64,7 @@ class Route
             $logger = $this->logger;
             
             $logger->info('Start Applicantion!');
+            error_log('Start Now');
             
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
             if (empty($signature)) {
