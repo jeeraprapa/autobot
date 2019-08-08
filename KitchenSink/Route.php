@@ -62,6 +62,7 @@ class Route
             $bot = $this->bot;
             /** @var \Monolog\Logger $logger */
             $logger = $this->logger;
+            $logger->info('Test message event has come');
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
             if (empty($signature)) {
                 return $res->withStatus(400, 'Bad Request');
