@@ -62,7 +62,9 @@ class Route
             $bot = $this->bot;
             /** @var \Monolog\Logger $logger */
             $logger = $this->logger;
-            $logger->info('Start Applicantion');
+            
+            $logger->info('Start Applicantion!');
+            
             $signature = $req->getHeader(HTTPHeader::LINE_SIGNATURE);
             if (empty($signature)) {
                 $logger->info('Signature is missing');
